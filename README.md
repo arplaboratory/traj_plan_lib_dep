@@ -4,7 +4,7 @@
   *  https://github.com/emgertz/OOQP/releases/tag/OOQP-0.99.27
   
   
-2. In $OOQP_Directory/src/Vector/SimpleVector.c lines 221-234 replace the following code snippet
+2. In $OOQP_Directory/src/Vector/SimpleVector.c We replaced the lines 221-234 in the following code snippet
 
           void SimpleVector::scale( double alpha )
           {
