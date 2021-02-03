@@ -1,6 +1,9 @@
 Installation Dependencies
 ------------------------
-
+If you are using Ubuntu 18.04, you should install gfortran compiler as well. 
+```
+sudo apt-get install gfortran
+'''
 
 1. Download and extract MA27
   *  http://www.hsl.rl.ac.uk/archive/
@@ -8,8 +11,7 @@ Installation Dependencies
 
 2. download OOQP and extract libariries
   * https://github.com/arplaboratory/traj_plan_lib_dep
-  
-            
+              
 3.Build MA27 with the following commands.
 
         ./configure FFLAGS="-O -fPIC"
@@ -21,7 +23,7 @@ Installation Dependencies
 4.Set your enviorment variables for MA27
   *  NOTE: IT IS UNNECESSARY TO SET THE BLAS ENVIROMENT VARIABLE. The computer will naturally use the -lbas and -llpack
                                   
-                MA27LIB=usr/local/lib/libma27.a 
+                MA27LIB=/usr/local/lib/libma27.a 
                 export MA27LIB
 
 5. Download and install BLAS and LAPACKE
@@ -36,7 +38,7 @@ Installation Dependencies
         make -j4
         sudo make install
 
-7. Gitpull this to your catkin directory and catkin build traj_gen to make this directory
+7. Git pull this to your catkin directory and catkin build traj_gen to make this directory
 
 
 # traj_plan_lib_dep
