@@ -2,8 +2,8 @@ Installation Dependencies
 ------------------------
 If you are using Ubuntu 18.04, you should install gfortran compiler as well. 
 '''
-sudo apt-get install gfortran
-'''
+$ sudo apt-get install gfortran
+```
 
 1. Download and extract MA27
   *  http://www.hsl.rl.ac.uk/archive/
