@@ -1,7 +1,7 @@
 Installation Dependencies
 ------------------------
 If you are using Ubuntu 18.04, you should install gfortran compiler as well. 
-```
+'''
 sudo apt-get install gfortran
 '''
 
