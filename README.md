@@ -5,9 +5,9 @@ If you are using Ubuntu 18.04, you should install gfortran compiler as well.
 $ sudo apt-get install gfortran
 ```
 
-1. Download and extract MA27
+1.  extract MA27
   *  http://www.hsl.rl.ac.uk/archive/
-  *  Scroll down to MA27 - Note you don't need MA57
+  *  It is in the directory  
 
 2. download OOQP and extract libariries
   * https://github.com/arplaboratory/traj_plan_lib_dep
