@@ -6,8 +6,8 @@ $ sudo apt-get install gfortran
 ```
 
 1.  extract MA27
-  *  http://www.hsl.rl.ac.uk/archive/
-  *  It is in the directory  
+  *  Source http://www.hsl.rl.ac.uk/archive/
+  *  It is in the repo directory directory. You dont need to download it expliclty 
 
 2. download OOQP and extract libariries
   * https://github.com/arplaboratory/traj_plan_lib_dep
