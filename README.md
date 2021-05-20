@@ -8,6 +8,9 @@ $ sudo apt-get install gfortran
 1.  extract MA27
   *  Source http://www.hsl.rl.ac.uk/archive/
   *  It is in the repo directory directory. You dont need to download it expliclty 
+  * sudo apt-get install unzip 
+  * unzip file.zip
+  * path_to_traj_plan_dep/ma27.zip
 
 2.Build MA27 with the following commands.
 
