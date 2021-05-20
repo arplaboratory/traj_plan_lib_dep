@@ -9,8 +9,7 @@ $ sudo apt-get install gfortran
   *  Source http://www.hsl.rl.ac.uk/archive/
   *  It is in the repo directory directory. You dont need to download it expliclty 
   * sudo apt-get install unzip 
-  * unzip file.zip
-  * path_to_traj_plan_dep/ma27.zip
+  * unzip path_to_traj_plan_dep/ma27.zip
 
 2.Build MA27 with the following commands.
 
@@ -38,7 +37,6 @@ $ sudo apt-get install gfortran
         make -j4
         sudo make install
 
-6. Git pull this to your catkin directory and catkin build traj_gen to make this directory
 
 
 # traj_plan_lib_dep
