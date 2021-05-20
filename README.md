@@ -9,10 +9,7 @@ $ sudo apt-get install gfortran
   *  Source http://www.hsl.rl.ac.uk/archive/
   *  It is in the repo directory directory. You dont need to download it expliclty 
 
-2. download OOQP and extract libariries
-  * https://github.com/arplaboratory/traj_plan_lib_dep
-              
-3.Build MA27 with the following commands.
+2.Build MA27 with the following commands.
 
         ./configure FFLAGS="-O -fPIC"
         make clean 
@@ -20,17 +17,17 @@ $ sudo apt-get install gfortran
         make -j4
         sudo make install
 
-4.Set your enviorment variables for MA27
+3.Set your enviorment variables for MA27
   *  NOTE: IT IS UNNECESSARY TO SET THE BLAS ENVIROMENT VARIABLE. The computer will naturally use the -lbas and -llpack
                                   
                 MA27LIB=/usr/local/lib/libma27.a 
                 export MA27LIB
 
-5. Download and install BLAS and LAPACKE
+4. Download and install BLAS and LAPACKE
 
             sudo apt-get install libblas-dev liblapack-dev
             
-6. Build OOQP using the following commands. : 
+5. Build OOQP using the following commands. : 
 
         ./configure FFLAGS="-O -fPIC"
         make clean 
@@ -38,7 +35,7 @@ $ sudo apt-get install gfortran
         make -j4
         sudo make install
 
-7. Git pull this to your catkin directory and catkin build traj_gen to make this directory
+6. Git pull this to your catkin directory and catkin build traj_gen to make this directory
 
 
 # traj_plan_lib_dep
