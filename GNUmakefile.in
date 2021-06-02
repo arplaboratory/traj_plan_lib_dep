@@ -32,7 +32,6 @@ includedir  = @includedir@
 libdir      = @libdir@
 bindir      = @bindir@
 datadir     = @datadir@
-docdir      = $(datadir)/doc/packages/OOQP
 exec_prefix = @exec_prefix@
 locallibdir = @srcdir@/lib
 localincludedir = @srcdir@/include
@@ -73,11 +72,9 @@ distclean: veryclean
 	-find . -name "*.out" -exec rm \{\} \;
 	-find . -name "*.bak" -exec rm \{\} \;
 	-find . -name "*~" -exec rm \{\} \;
-	-if [ -d doc-src ]; then cd doc-src; $(MAKE) distclean; fi
-	-rm  GNUmakefile PetscMakefile
+
 
 maintainer-clean: distclean
-	-if [ -d doc-src ]; then cd doc-src; $(MAKE) maintainer-clean; fi
 	-rm -f configure
 
 depend:
@@ -85,7 +82,7 @@ depend:
 		$(DEFS) $(SOURCES) > /dev/null 2>&1
 	@echo " *** Done making depend"
 
-install: all install_headers install_libs install_docs install_exe
+install: all install_headers install_libs install_exe
 install_headers: all_headers
 	$(INSTALL) -d $(includedir)/ooqp	
 	$(INSTALL) $(localincludedir)/*.h $(includedir)/ooqp
@@ -98,19 +95,6 @@ install_exe:
 	$(INSTALL) -d $(bindir)
 	$(INSTALL) *.exe $(bindir)
 
-install_docs:
-	if [ -d doc-src ]; then cd doc-src; fi; make
-	$(INSTALL) -d $(docdir)
-	$(INSTALL) doc/*.pdf doc/*.html $(docdir)
-	$(INSTALL) -d $(docdir)/reference-manual
-	$(INSTALL) doc/reference-manual/*.html \
-		doc/reference-manual/*.png \
-		doc/reference-manual/*.css \
-		$(docdir)/reference-manual
-	$(INSTALL) -d $(docdir)/formulations
-	$(INSTALL) doc/formulations/*.html $(docdir)/formulations
-	$(INSTALL) -d $(docdir)/distribution-docs
-	$(INSTALL) doc/distribution-docs/*.html $(docdir)/distribution-docs 
 
 GNUmakefile: GNUmakefile.in config.status
 	./config.status
@@ -119,10 +103,8 @@ config.status: configure
 	./config.status --recheck
 
 rebuild-manifest:
-	cd doc-src; make
 	make distclean
 	find * .cvsignore \
-	\( -path "*CVS" -prune \) -o \( -path doc-src -prune \) \
 	-o -type f -print > MANIFEST
 
 rebuild-VERSION:
