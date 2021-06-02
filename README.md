@@ -30,15 +30,9 @@ $ sudo apt-get install gfortran
 4. Download and install BLAS and LAPACKE
 
             sudo apt-get install libblas-dev liblapack-dev
- 
-5. Unfortunately you will have to install Latex - later version will be removing this dependency as it is wholely unncessary and solely for the documentation. Refer to this link for more instructions if you get a latex build failure
-        
-        sudo apt-get install texlive-latex-base
-        sudo apt-get install texlive-fonts-recommended
-        sudo apt-get install texlive-fonts-extra
-       
+
             
-6. Build OOQP using the following commands. This should be done in the traj_plan_lib_dep directory where the ReadMe is in: 
+5. Build OOQP using the following commands. This should be done in the traj_plan_lib_dep directory where the ReadMe is in: 
 
         ./configure FFLAGS="-O -fPIC"
         make clean 
