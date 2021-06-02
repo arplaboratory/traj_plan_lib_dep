@@ -31,7 +31,7 @@ $ sudo apt-get install gfortran
 
             sudo apt-get install libblas-dev liblapack-dev
  
-5. Unfortunately you will have to install Latex - later version will be removing this dependency as it is wholely unncessary for the documentation. Refer to this link for more instructions if you get a latex build failure
+5. Unfortunately you will have to install Latex - later version will be removing this dependency as it is wholely unncessary and solely for the documentation. Refer to this link for more instructions if you get a latex build failure
         
         sudo apt-get install texlive-latex-base
         sudo apt-get install texlive-fonts-recommended
