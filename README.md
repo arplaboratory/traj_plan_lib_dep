@@ -40,6 +40,9 @@ $ sudo apt-get install gfortran
         make -j4
         sudo make install
 
+Sometimes you may have the following issue configure: error: cannot guess build type; you must specify one
+Please refer to the following link on how to resolve the issue.
+https://stackoverflow.com/questions/4810996/how-to-resolve-configure-guessing-build-type-failure
 
 
 # traj_plan_lib_dep
