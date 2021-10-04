@@ -44,6 +44,9 @@ Sometimes you may have the following issue configure: error: cannot guess build 
 Please refer to the following link on how to resolve the issue.
 https://stackoverflow.com/questions/4810996/how-to-resolve-configure-guessing-build-type-failure
 
+# INSTALLING on Dragonfly
+1. For Trajectory Planner. Remember to pull from the correct branch in order to install on the Dragonfly.
+https://github.com/arplaboratory/ARPL_Trajectory_Planning
 
 # traj_plan_lib_dep
 
