@@ -20,6 +20,7 @@ $ sudo apt-get install gfortran
         sudo make install
         
   *if there is configure error configure: error: cannot run /bin/bash ./config.sub, try run autoreconf --install
+  * If can not guess build type run this or ./configure ./configure --build=aarch64-unknown-linux-gnu
 
 3.Set your enviorment variables for MA27
   *  NOTE: IT IS UNNECESSARY TO SET THE BLAS ENVIROMENT VARIABLE. The computer will naturally use the -lbas and -llpack
