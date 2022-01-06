@@ -12,7 +12,8 @@ $ sudo apt-get install gfortran
   * unzip path_to_traj_plan_dep/ma27.zip
 
 2.Build MA27 with the following commands. got o the extracted ma27 library
-
+ 
+         cd ma27
         ./configure FFLAGS="-O -fPIC"
         make clean 
         export CXXFLAGS="-O -fPIC"
