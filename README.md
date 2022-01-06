@@ -1,60 +1,87 @@
-Installation Dependencies
-------------------------
-## Prerequsite
+# traj_plan_lib_dep
+This is the dependencies repo for the trajectory generation package in the ARPL. 
+
+If you have any question regarding the repo, please feel free to post questions in the Issues or ask the maintainer directly. 
+
+**Developer: Jeffery Mao<br />
+Affiliation: [NYU ARPL](https://wp.nyu.edu/arpl/)<br />
+Maintainer: <br />
+Jeffery Mao, jm7752@nyu.edu<br />
+Guanrui Li, lguanrui@nyu.edu<br />**
+
+### Prerequsite
 ```
 $ sudo apt-get install gfortran
+$ sudo apt-get install unzip 
 ```
 
-1.  extract MA27
-  *  Source http://www.hsl.rl.ac.uk/archive/
-  *  It is in the repo directory directory. You dont need to download it expliclty 
-  * sudo apt-get install unzip 
-  * unzip path_to_traj_plan_dep/ma27.zip
+### Installation
+0. Clone this repo to your workspace
+```
+$ cd /path/to/your/workspace/src
+$ git clone git@github.com:arplaboratory/traj_plan_lib_dep.git
+$ cd traj_plan_lib_dep
+```
+1.  Install MA27 (source: http://www.hsl.rl.ac.uk/archive/)
+    
+    The MA27 package is already in this repo directory directory.  You can just unzip the ma27.zip like following:
+```
+$ unzip ma27.zip
+```
 
-2.Build MA27 with the following commands. got o the extracted ma27 library
- 
-         cd ma27
-        ./configure FFLAGS="-O -fPIC"
-        make clean 
-        export CXXFLAGS="-O -fPIC"
-        make -j4
-        sudo make install
-        
-  *if there is configure error configure: error: cannot run /bin/bash ./config.sub, try run autoreconf --install
-  * If can not guess build type run this or ./configure ./configure --build=aarch64-unknown-linux-gnu
+Then you can build MA27 with the following commands. 
+```
+$ cd ma27
+$ ./configure FFLAGS="-O -fPIC"
+$ make clean 
+$ export CXXFLAGS="-O -fPIC"
+$ make -j4
+$ sudo make install
+```        
+   *  NOTE: if there is configure error configure: error: cannot run /bin/bash ./config.sub, try to run 
+```   
+$ autoreconf --install
+``` 
 
-3.Set your enviorment variables for MA27
+If autoreconf --install failed then run  
+
+```   
+$ ./configure --build=aarch64-unknown-linux-gnu
+``` 
+	 
+Now you should set your enviorment variables for MA27
+```
+$ MA27LIB=/usr/local/lib/libma27.a 
+$ export MA27LIB
+```                                         
   *  NOTE: IT IS UNNECESSARY TO SET THE BLAS ENVIROMENT VARIABLE. The computer will naturally use the -lbas and -llpack
-                                  
-                MA27LIB=/usr/local/lib/libma27.a 
-                export MA27LIB
+  
+2. Download and install BLAS and LAPACKE
+```
+$ sudo apt-get install libblas-dev liblapack-dev
+```
 
-4. Download and install BLAS and LAPACKE
-
-            sudo apt-get install libblas-dev liblapack-dev
-
-            
-5. Build OOQP using the following commands. This should be done in the traj_plan_lib_dep directory where the ReadMe is in: 
-
-        ./configure FFLAGS="-O -fPIC"
-        make clean 
-        export CXXFLAGS="-O -fPIC"
-        make -j4
-        sudo make install
-
-Sometimes you may have the following issue configure: error: cannot guess build type; you must specify one
+3. Build OOQP using the following commands. This should be done in the traj_plan_lib_dep directory where the ReadMe is in: 
+```
+$ cd /path/to/traj_plan_lib_dep
+$ ./configure FFLAGS="-O -fPIC"
+$ make clean 
+$ export CXXFLAGS="-O -fPIC"
+$ make -j4
+$ sudo make install
+```   
+Sometimes you may have the following issue configure: error: cannot guess build type; you must specify one.
 Please refer to the following link on how to resolve the issue.
 https://stackoverflow.com/questions/4810996/how-to-resolve-configure-guessing-build-type-failure
 
-# INSTALLING on Dragonfly
+## INSTALLING on Dragonfly
 1. For Trajectory Planner. Remember to pull from the ``main`` branch in order to install on the Dragonfly.
 https://github.com/arplaboratory/ARPL_Trajectory_Planning
 
-# traj_plan_lib_dep
+## Additional Information about the changes we made in the OOQP
 
-1. This came from this link download OOQP and extract libariries
+1. We download OOQP for the following link and extract libariries
   *  https://github.com/emgertz/OOQP/releases/tag/OOQP-0.99.27
-  
   
 2. In $OOQP_Directory/src/Vector/SimpleVector.c We replaced the lines 221-234 in the following code snippet
 
@@ -93,4 +120,3 @@ With the following
         v[i] += alpha*sv[i];          
             }
       }
-
