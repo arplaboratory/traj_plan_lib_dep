@@ -51,8 +51,7 @@ $ ./configure --build=aarch64-unknown-linux-gnu
 	 
 Now you should set your enviorment variables for MA27
 ```
-$ MA27LIB=/usr/local/lib/libma27.a 
-$ export MA27LIB
+$ export MA27LIB=/usr/local/lib/libma27.a 
 ```                                         
   *  NOTE: IT IS UNNECESSARY TO SET THE BLAS ENVIROMENT VARIABLE. The computer will naturally use the -lbas and -llpack
   
@@ -71,7 +70,11 @@ $ make -j4
 $ sudo make install
 ```   
 Sometimes you may have the following issue configure: error: cannot guess build type; you must specify one.
-Please refer to the following link on how to resolve the issue.
+For Nvidia jetson TX2 you can resolve this issue with 
+```
+$ ./configure --build=aarch64-unknown-linux-gnu FFLAGS="-O -fPIC"
+```
+Please refer to the following link for more details on how to resolve the issue.
 https://stackoverflow.com/questions/4810996/how-to-resolve-configure-guessing-build-type-failure
 
 ## INSTALLING on Dragonfly
